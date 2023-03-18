@@ -4,7 +4,13 @@
   padding-bottom: 41px;
 }
 
-@media (max-width: 614px) {
+@media (max-width: 913px) {
+  .header {
+    padding-left: 17px;
+  }
+}
+
+@media (max-width: 613px) {
   .header {
     margin: 28px auto 0;
     padding-bottom: 32px;

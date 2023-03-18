@@ -1,16 +1,17 @@
 .profile-info {
   display: flex;
-  flex-direction: column;
-  position: relative;
+  flex-direction: row;
+  flex-wrap: wrap;
   margin: auto 0;
   padding-left: 30px;
-  align-self: flex-start;
-  max-width: calc(100% - 350px);
+  max-width: calc(100% - 300px);
 }
 
 @media (max-width: 613px) {
   .profile-info {
-    margin: 26px auto 0;
+    margin: 26px 0 0;
     padding-left: 0;
+    max-width: 100%;
+    justify-content: center;
   }
 }

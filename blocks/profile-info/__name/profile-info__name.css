@@ -7,9 +7,15 @@
   margin: 0;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 913px) {
   .profile-info__name {
-    max-width: 252px;
+    max-width: calc(100% - 50px);
+  }
+}
+
+@media (max-width: 613px) {
+  .profile-info__name {
+    max-width: calc(100% - 30px);
     font-size: 27px;
     line-height: 33px;
     text-align: center;

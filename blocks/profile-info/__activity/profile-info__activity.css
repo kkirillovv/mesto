@@ -5,11 +5,11 @@
   line-height: 22px;
   text-align: left;
   margin: 16px 0 0;
+  flex-basis: 100%;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 613px) {
   .profile-info__activity {
-    max-width: 288px;
     font-size: 14px;
     line-height: 17px;
     text-align: center;
