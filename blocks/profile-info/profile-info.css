@@ -5,6 +5,7 @@
   margin: auto 0;
   padding-left: 30px;
   align-self: flex-start;
+  max-width: calc(100% - 350px);
 }
 
 @media (max-width: 613px) {
