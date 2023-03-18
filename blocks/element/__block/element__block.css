@@ -1,0 +1,8 @@
+.element__block {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  background-color: #fff;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+} 

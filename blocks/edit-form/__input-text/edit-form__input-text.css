@@ -1,0 +1,14 @@
+.edit-form__input-text {
+  border: 0;
+  border-bottom: 1px solid #000;
+  color: #000000;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  padding: 0;
+}
+
+.edit-form__input-text:focus {
+    outline: none;
+}

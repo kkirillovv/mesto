@@ -1,0 +1,440 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"pa",
+				"padding-bottom\tproperty"
+			],
+			[
+				"mar",
+				"margin\tproperty"
+			],
+			[
+				"fle",
+				"flex-wrap\tproperty"
+			],
+			[
+				"pad",
+				"padding-left\tproperty"
+			],
+			[
+				"max",
+				"max-width\tproperty"
+			],
+			[
+				"c",
+				"cursor\tproperty"
+			],
+			[
+				"p",
+				"position\tproperty"
+			],
+			[
+				"wid",
+				"width\tproperty"
+			],
+			[
+				"di",
+				"display\tproperty"
+			],
+			[
+				"te",
+				"text-align\tproperty"
+			],
+			[
+				"o",
+				"opacity\tproperty"
+			],
+			[
+				"tr",
+				"transition\tproperty"
+			],
+			[
+				"al",
+				"alt\tAttr"
+			],
+			[
+				"space",
+				"space-between\tjustify-content"
+			],
+			[
+				"h",
+				"height\tproperty"
+			],
+			[
+				"как",
+				"каком-то"
+			],
+			[
+				"w",
+				"width\tproperty"
+			],
+			[
+				"align",
+				"align-content\tproperty"
+			],
+			[
+				"flex-",
+				"flex-basis\tproperty"
+			],
+			[
+				"ma",
+				"margin\tproperty"
+			],
+			[
+				"padi",
+				"padding-top\tproperty"
+			],
+			[
+				"co",
+				"content\tproperty"
+			],
+			[
+				"or",
+				"order\tproperty"
+			],
+			[
+				"fo",
+				"footer\tTag"
+			],
+			[
+				"background-c",
+				"background-color\tproperty"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "index.html",
+			"settings":
+			{
+				"buffer_size": 10639,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/Users/Кирилл/dev/mesto"
+	],
+	"file_history":
+	[
+		"/C/Users/Кирилл/dev/mesto/mesto.sublime-project",
+		"/C/Users/Кирилл/dev/russian-travel/pages/index.css",
+		"/C/Users/Кирилл/dev/russian-travel/index.html",
+		"/C/Users/Кирилл/dev/russian-travel/blocks/header/__lang-links/header__lang-links.css",
+		"/C/Users/Кирилл/dev/russian-travel/blocks/header/__lang-link/header__lang-link.css",
+		"/C/Users/Кирилл/dev/russian-travel/blocks/lead/__caption/lead__caption.css",
+		"/C/Users/Кирилл/dev/russian-travel/blocks/place/__link/place__link.css",
+		"/C/Users/Кирилл/dev/russian-travel/blocks/place/__website/place__website.css",
+		"/C/Users/Кирилл/dev/russian-travel/blocks/place/__url-heading/place__url-heading.css",
+		"/C/Users/Кирилл/dev/russian-travel/blocks/intro/__span-normal/intro__span-normal.css",
+		"/C/Users/Кирилл/dev/russian-travel/blocks/header/__lang-link/_active/header__lang-link_active.css",
+		"/C/Users/Кирилл/dev/russian-travel/blocks/cover/cover.css",
+		"/C/Users/Кирилл/dev/russian-travel/blocks/cover/__subtitle/cover__subtitle.css",
+		"/C/Users/Кирилл/dev/russian-travel/blocks/place/place.css",
+		"/C/Users/Кирилл/dev/russian-travel/blocks/places/places.css",
+		"/C/Users/Кирилл/dev/russian-travel/blocks/place/__title/place__title.css",
+		"/C/Users/Кирилл/dev/russian-travel/blocks/place/__paragraph/place__paragraph.css",
+		"/C/Users/Кирилл/dev/russian-travel/blocks/cover/__background/cover__background.css",
+		"/C/Users/Кирилл/dev/russian-travel/blocks/footer/footer.css",
+		"/C/Users/Кирилл/dev/russian-travel/blocks/website/website.css",
+		"/C/Users/Кирилл/dev/russian-travel/blocks/cover/__title/cover__title.css",
+		"/C/Users/Кирилл/dev/russian-travel/blocks/footer/__copyright/footer__copyright.css",
+		"/C/Users/Кирилл/dev/russian-travel/blocks/lead/lead.css",
+		"/C/Users/Кирилл/dev/russian-travel/blocks/footer/__link/footer__link.css",
+		"/C/Users/Кирилл/dev/russian-travel/blocks/footer/__links/footer__links.css",
+		"/C/Users/Кирилл/dev/russian-travel/blocks/lead/__title/lead__title.css",
+		"/C/Users/Кирилл/dev/russian-travel/blocks/lead/__subtitle/lead__subtitle.css",
+		"/C/Users/Кирилл/dev/russian-travel/blocks/photo-grid/photo-grid.css",
+		"/C/Users/Кирилл/dev/russian-travel/blocks/page/page.css",
+		"/C/Users/Кирилл/dev/russian-travel/blocks/place/__image/place__image.css",
+		"/C/Users/Кирилл/dev/russian-travel/blocks/flex-column/flex-column.css",
+		"/C/Users/Кирилл/dev/russian-travel/blocks/intro/__list/intro__list.css",
+		"/C/Users/Кирилл/dev/russian-travel/blocks/intro/intro.css",
+		"/C/Users/Кирилл/dev/russian-travel/blocks/header/__logo/header__logo.css",
+		"/C/Users/Кирилл/dev/russian-travel/blocks/photo-grid/__item/photo-grid__item.css",
+		"/C/Users/Кирилл/dev/russian-travel/blocks/logo/logo.css",
+		"/C/Users/Кирилл/dev/russian-travel/blocks/header/header.css",
+		"/C/Users/Кирилл/dev/russian-travel/blocks/header/__lang-link/_active/header__lang-link_lang_en.css",
+		"/C/Users/Кирилл/dev/russian-travel/blocks/logo/_place/logo_place_header.css",
+		"/C/Users/Кирилл/dev/russian-travel/blocks/span-normal/span-normal.css",
+		"/C/Users/Кирилл/dev/russian-travel/blocks/cover/__overlay/cover__overlay.css",
+		"/C/Users/Кирилл/dev/russian-travel/blocks/body/body.css",
+		"/C/Users/Кирилл/dev/russian-travel/blocks/link-opacity/link-opacity.css",
+		"/C/Users/Кирилл/dev/russian-travel/blocks/intro/__text/intro__text.css",
+		"/C/Users/Кирилл/dev/russian-travel/blocks/intro/__title/intro__title.css",
+		"/C/Users/Кирилл/dev/russian-travel/README.md",
+		"/C/Users/Кирилл/dev/russian-travel/blocks/website/__link/website__link.css",
+		"/C/Users/Кирилл/dev/russian-travel/blocks/website/__url-heading/website__url-heading.css",
+		"/C/Users/Кирилл/dev/russian-travel/fonts/inter.css",
+		"/C/Users/Кирилл/dev/russian-travel/fonts/Inter-ThinItalic.woff2",
+		"/C/Users/Кирилл/dev/russian-travel/blocks/place/__image/_bg/place__image_bg_altai.css",
+		"/C/Users/Кирилл/dev/russian-travel/blocks/place/__image/_bg/place__image_bg_karelia.css",
+		"/C/Users/Кирилл/dev/russian-travel/blocks/place/__image/_bg/place__image_bg_kolsky.css",
+		"/C/Users/Кирилл/dev/russian-travel/blocks/place/__image/_bg/place__image_bg_kosa.css",
+		"/C/Users/Кирилл/dev/russian-travel/blocks/place/__image/_bg/place__image_bg_winter-baikal.css",
+		"/C/Users/Кирилл/dev/russian-travel/blocks/header/__lang-link/_lang/header__lang-link_lang_en.css",
+		"/C/Users/Кирилл/dev/russian-travel/blocks/header/__lang-link/_lang/header__lang-link_lang_ru.css",
+		"/C/Users/Кирилл/dev/russian-travel/blocks/place/__image/_kolsky/place__image_kolsky.css",
+		"/C/Users/Кирилл/dev/russian-travel/blocks/place/__image/_altai/place__image_altai.css",
+		"/C/Users/Кирилл/dev/russian-travel/blocks/header/__lang-link/_ru/header__lang-link_ru.css",
+		"/C/Users/Кирилл/dev/russian-travel/blocks/header/__lang-link/_en/header__lang-link_en.css",
+		"/C/Users/Кирилл/dev/russian-travel/blocks/lead/__image/lead__image.css",
+		"/C/Users/Кирилл/dev/russian-travel/blocks/place/__image/_kosa/place__image_kosa.css",
+		"/C/Users/Кирилл/dev/russian-travel/blocks/place/__image/_winter-baikal/place__image_winter-baikal.css",
+		"/C/Users/Кирилл/dev/russian-travel/blocks/place/__image/_karelia/place__image_karelia.css",
+		"/C/Users/Кирилл/dev/russian-travel/blocks/cover/__background/cover.css",
+		"/C/Users/Кирилл/dev/russian-travel/blocks/header/__link/header__link.css",
+		"/C/Users/Кирилл/dev/russian-travel/blocks/photo-grid/__item/_kamchatka-2/photo-grid__item_kamchatka-2.css",
+		"/C/Users/Кирилл/dev/russian-travel/blocks/photo-grid/__item/_tuman/photo-grid__item_tuman.css",
+		"/C/Users/Кирилл/dev/russian-travel/blocks/photo-grid/__item/_train/photo-grid__item_train.css",
+		"/C/Users/Кирилл/dev/russian-travel/blocks/photo-grid/__item/_sochi/photo-grid__item_sochi.css",
+		"/C/Users/Кирилл/dev/russian-travel/blocks/photo-grid/__item/_kondratiev/photo-grid__item_kondratiev.css",
+		"/C/Users/Кирилл/dev/russian-travel/blocks/photo-grid/__item/_kamchatka-1/photo-grid__item_kamchatka-1.css",
+		"/C/Users/Кирилл/dev/russian-travel/blocks/photo-grid/__item/_ergaki/photo-grid__item_ergaki.css",
+		"/C/Users/Кирилл/dev/russian-travel/blocks/photo-grid/__item/_elbrus/photo-grid__item_elbrus.css",
+		"/C/Users/Кирилл/dev/russian-travel/blocks/photo-grid/__item/_baikal-2/photo-grid__item_baikal-2.css",
+		"/C/Users/Кирилл/dev/russian-travel/blocks/photo-grid/__item/_baikal/photo-grid__item_baikal.css",
+		"/C/Users/Кирилл/dev/russian-travel/blocks/photo-grid/__item/_atharva-tulsi/photo-grid__item_atharva-tulsi.css",
+		"/C/Users/Кирилл/dev/russian-travel/blocks/photo-grid/__item/_arisa/photo-grid__item_arisa.css",
+		"/C/Users/Кирилл/dev/Sprints/sprint 03/Inter-3.19/Inter Web/inter.css",
+		"/C/Users/Кирилл/dev/russian-travel/blocks/flex-row/flex-row.css",
+		"/C/Users/Кирилл/dev/how-to-learn/index.html",
+		"/C/Users/Кирилл/dev/how-to-learn/blocks/description/description.css",
+		"/C/Users/Кирилл/dev/how-to-learn/blocks/video/video.css",
+		"/C/Users/Кирилл/dev/how-to-learn/blocks/video/__iframes/video__iframes.css",
+		"/C/Users/Кирилл/dev/how-to-learn/pages/index.css",
+		"/C/Users/Кирилл/dev/how-to-learn/blocks/oakley/oakley.css",
+		"/C/Users/Кирилл/dev/how-to-learn/blocks/two-columns/two-columns.css",
+		"/C/Users/Кирилл/dev/how-to-learn/blocks/cards/__title/cards__title.css",
+		"/C/Users/Кирилл/dev/how-to-learn/blocks/cards/cards.css",
+		"/C/Users/Кирилл/dev/how-to-learn/blocks/cards/__image/cards__image.css",
+		"/C/Users/Кирилл/dev/how-to-learn/blocks/video/__iframe/video__iframe.css",
+		"/C/Users/Кирилл/dev/how-to-learn/blocks/two-columns/__paragraph/two-columns__paragraph.css",
+		"/C/Users/Кирилл/dev/how-to-learn/blocks/two-columns/__main-text/two-columns__main-text.css",
+		"/C/Users/Кирилл/dev/how-to-learn/blocks/two-columns/__brief/two-columns__brief.css",
+		"/C/Users/Кирилл/dev/how-to-learn/blocks/table/__text/table__text.css",
+		"/C/Users/Кирилл/dev/how-to-learn/blocks/table/table.css",
+		"/C/Users/Кирилл/dev/how-to-learn/blocks/table/__heading/table__heading.css",
+		"/C/Users/Кирилл/dev/how-to-learn/blocks/section-title/section-title.css",
+		"/C/Users/Кирилл/dev/how-to-learn/blocks/section-subtitle/section-subtitle.css",
+		"/C/Users/Кирилл/dev/how-to-learn/blocks/resources/__link/resources__link.css",
+		"/C/Users/Кирилл/dev/how-to-learn/blocks/link-opacity/link-opacity.css",
+		"/C/Users/Кирилл/dev/how-to-learn/blocks/khan/khan.css",
+		"/C/Users/Кирилл/dev/how-to-learn/blocks/khan/__title/khan__title.css",
+		"/C/Users/Кирилл/dev/how-to-learn/blocks/khan/__quote-author-subline/khan__quote-author-subline.css",
+		"/C/Users/Кирилл/dev/how-to-learn/blocks/khan/__quote/khan__quote.css",
+		"/C/Users/Кирилл/dev/how-to-learn/blocks/khan/__quote-author/khan__quote-author.css",
+		"/C/Users/Кирилл/dev/how-to-learn/blocks/khan/__buy-link/khan__buy-link.css",
+		"/C/Users/Кирилл/dev/how-to-learn/blocks/khan/__container/khan__container.css",
+		"/C/Users/Кирилл/dev/how-to-learn/blocks/khan/__book-pic/khan__book-pic.css",
+		"/C/Users/Кирилл/dev/how-to-learn/blocks/khan/__author/khan__author.css",
+		"/C/Users/Кирилл/dev/how-to-learn/blocks/kaufman/kaufman.css",
+		"/C/Users/Кирилл/dev/how-to-learn/blocks/kaufman/__triangle/kaufman__triangle.css",
+		"/C/Users/Кирилл/dev/how-to-learn/blocks/footer/__columns/footer__columns.css",
+		"/C/Users/Кирилл/dev/how-to-learn/blocks/footer/__column-links/footer__column-links.css",
+		"/C/Users/Кирилл/dev/how-to-learn/blocks/footer/__column/_content/footer__column_content_copyright.css",
+		"/C/Users/Кирилл/dev/how-to-learn/blocks/footer/__column/_content/footer__column_content_social.css",
+		"/C/Users/Кирилл/dev/how-to-learn/blocks/feynman/__title/feynman__title.css",
+		"/C/Users/Кирилл/dev/how-to-learn/blocks/feynman/__subtitle/feynman__subtitle.css",
+		"/C/Users/Кирилл/dev/how-to-learn/blocks/feynman/__link/feynman__link.css",
+		"/C/Users/Кирилл/dev/how-to-learn/blocks/digits/digits.css",
+		"/C/Users/Кирилл/dev/how-to-learn/blocks/cards/__item/cards__item.css",
+		"/C/Users/Кирилл/dev/how-to-learn/blocks/rotation/rotation.css",
+		"/C/Users/Кирилл/dev/how-to-learn/blocks/cards/__description/cards__description.css",
+		"/C/Users/Кирилл/dev/how-to-learn/blocks/content/content.css",
+		"/C/Users/Кирилл/dev/how-to-learn/blocks/root/root.css",
+		"/C/Users/Кирилл/dev/how-to-learn/blocks/header/__link/header__link.css",
+		"/C/Users/Кирилл/dev/how-to-learn/blocks/footer/__column-link/footer__column-link.css"
+	],
+	"find":
+	{
+		"height": 27.2
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 10639,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 27.2
+	},
+	"input":
+	{
+		"height": 40.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "mesto.sublime-project",
+	"replace":
+	{
+		"height": 51.2
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 237.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
