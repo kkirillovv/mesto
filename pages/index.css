@@ -1,7 +1,7 @@
 /* затем подгружаем нормализацию стилей */
 @import url(../vendor/normalize.css);
 /* подгружаем фонт Inter */
-@import url(../fonts/inter.css);
+@import url(../fonts/fonts.css);
 /* подгружаем общие стили интерфейса */
 @import url(../blocks/body/body.css);
 @import url(../blocks/page/page.css);
@@ -32,8 +32,11 @@
 @import url(../blocks/footer/footer.css);
 @import url(../blocks/footer/__copyright/footer__copyright.css);
 
-/* подгружаем стили блока popupWindow */
-@import url(../blocks/popup-window/popup-window.css);
+/* подгружаем стили блока Popup */
+@import url(../blocks/popup/popup.css);
+@import url(../blocks/popup/_opened/popup_opened.css);
+@import url(../blocks/popup/__container/popup__container.css);
+@import url(../blocks/popup/__close/popup__close.css);
 @import url(../blocks/edit-form/edit-form.css);
 @import url(../blocks/edit-form/__title/edit-form__title.css);
 @import url(../blocks/edit-form/__input-text/edit-form__input-text.css);
@@ -41,4 +44,3 @@
 @import url(../blocks/edit-form/__input-text/_type/edit-form__input-text_type_name.css);
 @import url(../blocks/edit-form/__button/edit-form__button.css);
 @import url(../blocks/edit-form/__button/_type/edit-form__button_type_save.css);
-@import url(../blocks/edit-form/__close/edit-form__close.css);

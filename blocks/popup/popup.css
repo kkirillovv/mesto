@@ -1,4 +1,4 @@
-.popup-window {
+.popup {
   display: none; /*flex;*/
   flex-direction: column;
   position: fixed;
@@ -6,7 +6,7 @@
   left: 0;
   width: 100%;
   min-height: 100%;
-  background-color: rgba(0,0,0,0.7);
+  background-color: rgba(0,0,0,0.5);
   overflow: hidden;
   font-family: 'Inter', Arial, sans-serif;
   -moz-osx-font-smoothing: grayscale;
