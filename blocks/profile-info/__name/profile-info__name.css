@@ -5,12 +5,10 @@
   line-height: 48px;
   text-align: left;
   margin: 0;
-}
-
-@media (max-width: 913px) {
-  .profile-info__name {
-    max-width: calc(100% - 50px);
-  }
+  text-overflow: ellipsis;
+  max-width: calc(100% - 50px);
+  overflow: hidden;
+  white-space: nowrap; 
 }
 
 @media (max-width: 613px) {

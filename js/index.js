@@ -1,5 +1,3 @@
-// const elements = document.querySelector('.elements');
-
 let content = document.querySelector('.content');
 let editButton = content.querySelector('.profile-info__edit');
 let profileName = content.querySelector('.profile-info__name');
@@ -29,18 +27,6 @@ function handleFormSubmit (evt) {
   editProfileInfo();
 }
 
-// function handleClickElement(e) {
-//   if (e.target.classList.contains("element__like")) {
-//     if (!e.target.classList.contains("element__like_active")) {
-//       e.target.classList.add("element__like_active");
-//     } else {
-//       e.target.classList.remove("element__like_active");
-//     }
-//   }
-// }
-
 editButton.addEventListener('click', editProfileInfo);
 closeButton.addEventListener('click', editProfileInfo);
 formElement.addEventListener('submit', handleFormSubmit);
-
-// elements.addEventListener('click', handleClickElement);
