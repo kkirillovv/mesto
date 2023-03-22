@@ -20,10 +20,10 @@
         <img src="./images/profile.jpg" class="profile__avatar" alt="Вулканы Курил">
         <div class="profile-info">
           <h1 class="profile-info__name">Вулканы Курил</h1> <!-- Жак-Ив Кусто -->
-          <button class="profile-info__edit" type="button"></button>
+          <button class="profile-info__edit" type="button" aria-label="Редактировать"></button>
           <p class="profile-info__activity">Действующие и потухшие вулканы Курильского архипелага</p> <!-- Исследователь океана -->
         </div>
-        <button class="profile__add-photo" type="button"></button>
+        <button class="profile__add-photo" type="button" aria-label="Добавить фото"></button>
       </section>
      
       <section class="elements" aria-label="Фотогалерея">
@@ -79,12 +79,12 @@
 
   <div class="popup">
     <div class="popup__container">
-      <button class="popup__close" type="reset"></button>
+      <button class="popup__close" type="button" aria-label="Закрыть"></button>
       <form class="edit-form" name="edit-profile">
         <h2 class="edit-form__title">Редактировать профиль</h2>
         <input type="text" name="name" class="edit-form__input-text edit-form__input-text_type_name" placeholder="Имя" value="" required>
         <input type="text" name="activity" class="edit-form__input-text edit-form__input-text_type_activity" placeholder="Деятельность" value="" required>
-        <button class="edit-form__button edit-form__button_type_save" type="submit">Сохранить</button>
+        <button class="edit-form__button edit-form__button_type_save" type="submit" aria-label="Сохранить">Сохранить</button>
       </form>
     </div>
   </div>

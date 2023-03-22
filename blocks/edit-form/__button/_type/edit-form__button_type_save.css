@@ -1,4 +1,4 @@
-.edit-form__button {
+.edit-form__button_type_save {
   margin: 48px 36px 37px;
   font-style: normal;
   font-weight: 400;
@@ -7,7 +7,7 @@
 }
 
 @media (max-width: 530px) {
-  .edit-form__button {
+  .edit-form__button_type_save {
     margin: 45px 22px 25px;
     font-size: 14px;
     line-height: 17px;
