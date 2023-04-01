@@ -35,10 +35,27 @@
     </footer>
   </div>
 
-  <div class="popup" id="form">
+  <div class="popup" id="edit-profile">
     <div class="popup__container popup__container_edit-form">
       <button class="popup__close" type="button" aria-label="Закрыть"></button>
-      <form class="edit-form"></form>
+      <form class="edit-form" name="edit-profile">
+        <h2 class="edit-form__title">Редактировать профиль</h2>
+        <input type="text" name="name" class="edit-form__input-text edit-form__input-text_type_name" placeholder="Имя" value="" required>
+        <input type="text" name="activity" class="edit-form__input-text edit-form__input-text_type_activity" placeholder="Деятельность" value="" required>
+        <button class="edit-form__button edit-form__button_type_save" type="submit" aria-label="Сохранить">Сохранить</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="popup" id="add-photo">
+    <div class="popup__container popup__container_edit-form">
+      <button class="popup__close" type="button" aria-label="Закрыть"></button>
+      <form class="edit-form" name="add-photo">
+        <h2 class="edit-form__title">Новое место</h2>
+        <input type="text" name="title" class="edit-form__input-text edit-form__input-text_type_title" placeholder="Название" value="" required>
+        <input type="text" name="link" class="edit-form__input-text edit-form__input-text_type_link" placeholder="Cсылка на картинку" value="" required>
+        <button class="edit-form__button edit-form__button_type_save" type="submit" aria-label="Сохранить">Сохранить</button>
+      </form>
     </div>
   </div>
 
@@ -63,24 +80,7 @@
     </article>
   </template>
 
-  <template id="edit-profile">
-    <form class="edit-form" name="edit-profile">
-      <h2 class="edit-form__title">Редактировать профиль</h2>
-      <input type="text" name="name" class="edit-form__input-text edit-form__input-text_type_name" placeholder="Имя" value="" required>
-      <input type="text" name="activity" class="edit-form__input-text edit-form__input-text_type_activity" placeholder="Деятельность" value="" required>
-      <button class="edit-form__button edit-form__button_type_save" type="submit" aria-label="Сохранить">Сохранить</button>
-    </form>
-  </template>
-
-  <template id="add-photo">
-      <form class="edit-form" name="add-photo">
-        <h2 class="edit-form__title">Новое место</h2>
-        <input type="text" name="title" class="edit-form__input-text edit-form__input-text_type_title" placeholder="Название" value="" required>
-        <input type="text" name="link" class="edit-form__input-text edit-form__input-text_type_link" placeholder="Cсылка на картинку" value="" required>
-        <button class="edit-form__button edit-form__button_type_save" type="submit" aria-label="Сохранить">Сохранить</button>
-      </form>
-  </template>
-
+  <script src="js/cards.js"></script>
   <script src="js/index.js"></script>
 </body>
 </html>
