@@ -1,5 +1,5 @@
 .popup {
-  display: none; /*flex;*/
+  display: flex;
   flex-direction: column;
   position: fixed;
   top: 0;
@@ -15,4 +15,7 @@
   -ms-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
   text-rendering: optimizeLegibility;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.5s, opacity 0.5s linear;
 }
