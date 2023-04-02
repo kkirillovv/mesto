@@ -9,16 +9,29 @@ const buttonAddPhoto = content.querySelector('.profile__add-photo');
 const profileName = content.querySelector('.profile-info__name');
 const profileActivity = content.querySelector('.profile-info__activity');
 // Попап формы редактирования
-const popupEditForm = document.querySelector('#edit-profile');
-const buttonClosePopupEditForm = popupEditForm.querySelector('.popup__close');
+const popupEditFormProfile = document.querySelector('#edit-profile');
+const buttonClosePopupEditForm = popupEditFormProfile.querySelector('.popup__close');
+const inputNameFormProfile = popupEditFormProfile.querySelector('.edit-form__input-text_type_name');
+const inputActivityFormProfile = popupEditFormProfile.querySelector('.edit-form__input-text_type_activity');  
 // Попап формы добавления фотографии
 const popupAddPhoto = document.querySelector('#add-photo');
 const buttonClosePopupAddPhoto = popupAddPhoto.querySelector('.popup__close');
+const inputTitleFormAddNewCard = popupAddPhoto.querySelector('.edit-form__input-text_type_title');
+const inputLinkFormAddNewCard = popupAddPhoto.querySelector('.edit-form__input-text_type_link');
 // Попап показа фотографий
 const popupShowPhoto = document.querySelector('#show');
 const buttonClosePopupShowPhoto = popupShowPhoto.querySelector('.popup__close');
+const titleCardDetails = popupShowPhoto.querySelector('.card-details__title');
+const imageCardDetails = popupShowPhoto.querySelector('.card-details__image')
 
 // B. Объявляем функции ----------------------------------------------------
+
+function handleOpenFullImage (item) {
+  titleCardDetails.textContent = item.name;
+  imageCardDetails.src = item.link;
+  imageCardDetails.alt = item.alt;
+  openPopup(popupShowPhoto);
+} 
 
 function createCard (item) {
   // клонируем содержимое тега template
@@ -27,8 +40,6 @@ function createCard (item) {
   const trashElement = element.querySelector('.element__trash');
   const photoElement = element.querySelector('.element__photo');
   const titleElement = element.querySelector('.element__title');
-  const titleCardDetails = popupShowPhoto.querySelector('.card-details__title');
-  const imageCardDetails = popupShowPhoto.querySelector('.card-details__image')
 
   // заполняем карточку
   titleElement.textContent = item.name;
@@ -44,109 +55,97 @@ function createCard (item) {
     trashElement.parentElement.remove();
   });
   // 6. Открытие попапа с картинкой / Слушатель события
-  photoElement.addEventListener('click', function () {
-    titleCardDetails.textContent = titleElement.textContent;
-    imageCardDetails.src = photoElement.src;
-    imageCardDetails.alt = photoElement.alt;
-    togglePopup(popupShowPhoto);
-  });
+  photoElement.addEventListener('click', () => handleOpenFullImage(item));
+
   return element;
 }
 
-function renderCard (item) { 
+function renderCard (container, item) { 
   // отображаем на странице
-  elements.prepend(createCard(item));
+  container.prepend(createCard(item));
 }
 
-function togglePopup(item) {
-  item.classList.toggle("popup_opened");
+function openPopup(item) {
+  item.classList.add("popup_opened");
+}
+
+function closePopup(item) {
+  item.classList.remove("popup_opened");
 }
 
 function editProfileInfo (evt) {
-  const textInputName = popupEditForm.querySelector('.edit-form__input-text_type_name');
-  const textInputActivity = popupEditForm.querySelector('.edit-form__input-text_type_activity');  
-
   evt.preventDefault(); // Эта строчка отменяет стандартную отправку формы.
-  profileName.textContent = textInputName.value;
-  profileActivity.textContent = textInputActivity.value;
-  togglePopup(popupEditForm);
+  profileName.textContent = inputNameFormProfile.value;
+  profileActivity.textContent = inputActivityFormProfile.value;
+  closePopup(popupEditFormProfile);
 }
 
 // 3. Добавление карточки
 function makeNewCard (evt) {
-  const photoTitle = popupAddPhoto.querySelector('.edit-form__input-text_type_title');
-  const photoLink = popupAddPhoto.querySelector('.edit-form__input-text_type_link');
-
   evt.preventDefault();
-  renderCard({
-    name: photoTitle.value,
-    link: photoLink.value,
-    alt: photoTitle.value
+  renderCard(elements, {
+    name: inputTitleFormAddNewCard.value,
+    link: inputLinkFormAddNewCard.value,
+    alt: inputTitleFormAddNewCard.value
   }); 
-  togglePopup(popupAddPhoto);
+  closePopup(popupAddPhoto);
 }
 
 function creatFormPopup(form, data) {
   data.forEach(function (item) {
     form.querySelector(item.selector).value = item.value;
   });
-  switch (form.id) {
-    case "edit-profile":
-      form.addEventListener('submit', editProfileInfo);
-      break;
-    case "add-photo":
-      form.addEventListener('submit', makeNewCard);
-      break;
-  }
 }
 
-function editInfo () {
+function handleOpenEditInfo () {
   const inputTextFields = [
     {
       selector: '.edit-form__input-text_type_name',
-      value: profileName.textContent,
+      value: profileName.textContent
     },
     {
       selector: '.edit-form__input-text_type_activity',
-      value: profileActivity.textContent,
+      value: profileActivity.textContent
     }
   ];
-  creatFormPopup(popupEditForm, inputTextFields);
-  togglePopup(popupEditForm);
+  creatFormPopup(popupEditFormProfile, inputTextFields);
+  openPopup(popupEditFormProfile);
 }
 
 // 2. Форма добавления карточки
-function addPhoto () {
+function handleOpenNewPhoto () {
   const inputTextFields = [
     {
       selector: '.edit-form__input-text_type_title',
-      value: '',
+      value: ''
     },
     {
       selector: '.edit-form__input-text_type_link',
-      value: '',
+      value: ''
     }
   ];
   creatFormPopup(popupAddPhoto, inputTextFields);
-  togglePopup(popupAddPhoto);
+  openPopup(popupAddPhoto);
 }
 
 // C. Реализуем добавление обработчиков ------------------------------------
 
 // 1. Шесть карточек «из коробки»
 initialCards.forEach(function (item) {
-  renderCard(item)
+  renderCard(elements, item)
 });
 
 // Сниферы 
-buttonEditProfile.addEventListener('click', editInfo);
-buttonAddPhoto.addEventListener('click', addPhoto);
+buttonEditProfile.addEventListener('click', handleOpenEditInfo);
+buttonAddPhoto.addEventListener('click', handleOpenNewPhoto);
 buttonClosePopupEditForm.addEventListener('click', function () {
-  togglePopup(popupEditForm);
+  closePopup(popupEditFormProfile);
 });
 buttonClosePopupAddPhoto.addEventListener('click', function () {
-  togglePopup(popupAddPhoto);
+  closePopup(popupAddPhoto);
 });
 buttonClosePopupShowPhoto.addEventListener('click', function () {
-  togglePopup(popupShowPhoto);
+  closePopup(popupShowPhoto);
 });
+popupEditFormProfile.addEventListener('submit', editProfileInfo);
+popupAddPhoto.addEventListener('submit', makeNewCard);
