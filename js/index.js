@@ -1,5 +1,13 @@
 // A. Объявляем переменные -------------------------------------------------
 
+const validator = {
+  inputSelector: '.edit-form__input-text',
+  submitButtonSelector: '.edit-form__button',
+  inactiveButtonClass: 'edit-form__button_inactive',
+  inputErrorClass: 'edit-form__input-text_type_error',
+  errorClass: 'edit-form__input-error_active'
+}
+
 const cardTemplate = document.querySelector('#article_card').content;
 const elements = document.querySelector('.elements');
 
@@ -10,17 +18,14 @@ const profileName = content.querySelector('.profile-info__name');
 const profileActivity = content.querySelector('.profile-info__activity');
 // Попап формы редактирования
 const popupEditFormProfile = document.querySelector('#edit-profile');
-const buttonClosePopupEditForm = popupEditFormProfile.querySelector('.popup__close');
 const inputNameFormProfile = popupEditFormProfile.querySelector('.edit-form__input-text_type_name');
 const inputActivityFormProfile = popupEditFormProfile.querySelector('.edit-form__input-text_type_activity');  
 // Попап формы добавления фотографии
 const popupAddPhoto = document.querySelector('#add-photo');
-const buttonClosePopupAddPhoto = popupAddPhoto.querySelector('.popup__close');
 const inputTitleFormAddNewCard = popupAddPhoto.querySelector('.edit-form__input-text_type_title');
 const inputLinkFormAddNewCard = popupAddPhoto.querySelector('.edit-form__input-text_type_link');
 // Попап показа фотографий
 const popupShowPhoto = document.querySelector('#show');
-const buttonClosePopupShowPhoto = popupShowPhoto.querySelector('.popup__close');
 const titleCardDetails = popupShowPhoto.querySelector('.card-details__title');
 const imageCardDetails = popupShowPhoto.querySelector('.card-details__image')
 
@@ -65,14 +70,6 @@ function renderCard (container, item) {
   container.prepend(createCard(item));
 }
 
-function openPopup(item) {
-  item.classList.add("popup_opened");
-}
-
-function closePopup(item) {
-  item.classList.remove("popup_opened");
-}
-
 function editProfileInfo (evt) {
   evt.preventDefault(); // Эта строчка отменяет стандартную отправку формы.
   profileName.textContent = inputNameFormProfile.value;
@@ -110,6 +107,7 @@ function handleOpenEditInfo () {
   ];
   creatFormPopup(popupEditFormProfile, inputTextFields);
   openPopup(popupEditFormProfile);
+  zeroInputsError(popupEditFormProfile, validator);
 }
 
 // 2. Форма добавления карточки
@@ -126,6 +124,7 @@ function handleOpenNewPhoto () {
   ];
   creatFormPopup(popupAddPhoto, inputTextFields);
   openPopup(popupAddPhoto);
+  zeroInputsError(popupAddPhoto, validator);
 }
 
 // C. Реализуем добавление обработчиков ------------------------------------
@@ -138,14 +137,16 @@ initialCards.forEach(function (item) {
 // Сниферы 
 buttonEditProfile.addEventListener('click', handleOpenEditInfo);
 buttonAddPhoto.addEventListener('click', handleOpenNewPhoto);
-buttonClosePopupEditForm.addEventListener('click', function () {
-  closePopup(popupEditFormProfile);
-});
-buttonClosePopupAddPhoto.addEventListener('click', function () {
-  closePopup(popupAddPhoto);
-});
-buttonClosePopupShowPhoto.addEventListener('click', function () {
-  closePopup(popupShowPhoto);
-});
+
 popupEditFormProfile.addEventListener('submit', editProfileInfo);
 popupAddPhoto.addEventListener('submit', makeNewCard);
+
+enableValidation({
+  formSelector: '.edit-form', // .popup__form
+  setSelector: '.edit-form__set', // .popup__set
+  inputSelector: '.edit-form__input-text', // .popup__input
+  submitButtonSelector: '.edit-form__button', // .popup__button
+  inactiveButtonClass: 'edit-form__button_inactive', // popup__button_disabled
+  inputErrorClass: 'edit-form__input-text_type_error', // popup__input_type_error
+  errorClass: 'edit-form__input-error_active' // popup__error_visible
+});

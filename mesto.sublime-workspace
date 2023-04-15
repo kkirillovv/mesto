@@ -152,37 +152,10 @@
 	"buffers":
 	[
 		{
-			"file": "index.html",
+			"file": "/C/Users/Кирилл/dev/vk-source/index.html",
 			"settings":
 			{
-				"buffer_size": 3271,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "js/index.js",
-			"settings":
-			{
-				"buffer_size": 3387,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "blocks/popup/_opened/popup_opened.css",
-			"settings":
-			{
-				"buffer_size": 106,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "blocks/popup/popup.css",
-			"settings":
-			{
-				"buffer_size": 526,
+				"buffer_size": 3731,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -225,16 +198,22 @@
 	"expanded_folders":
 	[
 		"/C/Users/Кирилл/dev/mesto",
-		"/C/Users/Кирилл/dev/mesto/blocks",
-		"/C/Users/Кирилл/dev/mesto/blocks/element",
-		"/C/Users/Кирилл/dev/mesto/blocks/element/__like",
-		"/C/Users/Кирилл/dev/mesto/blocks/element/__like/_active",
-		"/C/Users/Кирилл/dev/mesto/blocks/popup",
-		"/C/Users/Кирилл/dev/mesto/blocks/popup/_opened"
+		"/C/Users/Кирилл/dev/mesto/js"
 	],
 	"file_history":
 	[
+		"/C/Users/Кирилл/dev/mesto/index.html",
+		"/C/Users/Кирилл/dev/mesto/js/index.js",
+		"/C/Users/Кирилл/dev/mesto/js/cards.js",
+		"/C/Users/Кирилл/dev/mesto/blocks/card-details/card-details.css",
+		"/C/Users/Кирилл/dev/mesto/blocks/card-details/__title/card-details__title.css",
 		"/C/Users/Кирилл/dev/mesto/pages/index.css",
+		"/C/Users/Кирилл/dev/mesto/blocks/popup/__container/_card-details/popup__container_card-details.css",
+		"/C/Users/Кирилл/dev/mesto/blocks/popup/__container/popup__container.css",
+		"/C/Users/Кирилл/dev/mesto/blocks/popup/__container/_edit-form/popup__container_edit-form.css",
+		"/C/Users/Кирилл/dev/mesto/blocks/card-details/__image/card-details__image.css",
+		"/C/Users/Кирилл/dev/mesto/blocks/popup/_opened/popup_opened.css",
+		"/C/Users/Кирилл/dev/mesto/blocks/popup/popup.css",
 		"/C/Users/Кирилл/dev/mesto/blocks/element/__photo/element__photo.css",
 		"/C/Users/Кирилл/dev/mesto/blocks/element/__trash/element__trash.css",
 		"/C/Users/Кирилл/dev/mesto/blocks/element/element.css",
@@ -242,7 +221,6 @@
 		"/C/Users/Кирилл/dev/mesto/blocks/profile-info/__activity/profile-info__activity.css",
 		"/C/Users/Кирилл/dev/mesto/blocks/edit-form/__button/edit-form__button.css",
 		"/C/Users/Кирилл/dev/mesto/blocks/edit-form/__button/_type/edit-form__button_type_save.css",
-		"/C/Users/Кирилл/dev/mesto/js/index.js",
 		"/C/Users/Кирилл/dev/mesto/blocks/profile/__add-photo/profile__add-photo.css",
 		"/C/Users/Кирилл/dev/mesto/blocks/edit-form/__input-text/edit-form__input-text.css",
 		"/C/Users/Кирилл/dev/mesto/blocks/profile-info/__name/profile-info__name.css",
@@ -255,8 +233,6 @@
 		"/C/Users/Кирилл/dev/mesto/blocks/popup/popup_opened.css",
 		"/C/Users/Кирилл/dev/mesto/blocks/element/__like/element__like.css",
 		"/C/Users/Кирилл/dev/mesto/blocks/edit-form/edit-form.css",
-		"/C/Users/Кирилл/dev/mesto/blocks/popup/__container/popup__container.css",
-		"/C/Users/Кирилл/dev/mesto/blocks/popup/popup.css",
 		"/C/Users/Кирилл/dev/mesto/blocks/profile/__avatar/profile__avatar.css",
 		"/C/Users/Кирилл/dev/mesto/blocks/header/header.css",
 		"/C/Users/Кирилл/dev/mesto/fonts/Inter.var.woff2",
@@ -264,7 +240,6 @@
 		"/C/Users/Кирилл/dev/mesto/blocks/popup-window/popup-window.css",
 		"/C/Users/Кирилл/dev/mesto/blocks/body/body.css",
 		"/C/Users/Кирилл/dev/mesto/blocks/profile/profile.css",
-		"/C/Users/Кирилл/dev/mesto/index.html",
 		"/C/Users/Кирилл/dev/mesto/blocks/element/__block/element__block.css",
 		"/C/Users/Кирилл/dev/mesto/blocks/element/__title/element__title.css",
 		"/C/Users/Кирилл/dev/mesto/fonts/inter.css",
@@ -354,18 +329,11 @@
 		"/C/Users/Кирилл/dev/russian-travel/blocks/photo-grid/__item/_kondratiev/photo-grid__item_kondratiev.css",
 		"/C/Users/Кирилл/dev/russian-travel/blocks/photo-grid/__item/_kamchatka-1/photo-grid__item_kamchatka-1.css",
 		"/C/Users/Кирилл/dev/russian-travel/blocks/photo-grid/__item/_ergaki/photo-grid__item_ergaki.css",
-		"/C/Users/Кирилл/dev/russian-travel/blocks/photo-grid/__item/_elbrus/photo-grid__item_elbrus.css",
-		"/C/Users/Кирилл/dev/russian-travel/blocks/photo-grid/__item/_baikal-2/photo-grid__item_baikal-2.css",
-		"/C/Users/Кирилл/dev/russian-travel/blocks/photo-grid/__item/_baikal/photo-grid__item_baikal.css",
-		"/C/Users/Кирилл/dev/russian-travel/blocks/photo-grid/__item/_atharva-tulsi/photo-grid__item_atharva-tulsi.css",
-		"/C/Users/Кирилл/dev/russian-travel/blocks/photo-grid/__item/_arisa/photo-grid__item_arisa.css",
-		"/C/Users/Кирилл/dev/Sprints/sprint 03/Inter-3.19/Inter Web/inter.css",
-		"/C/Users/Кирилл/dev/russian-travel/blocks/flex-row/flex-row.css",
-		"/C/Users/Кирилл/dev/how-to-learn/index.html"
+		"/C/Users/Кирилл/dev/russian-travel/blocks/photo-grid/__item/_elbrus/photo-grid__item_elbrus.css"
 	],
 	"find":
 	{
-		"height": 27.2
+		"height": 28.0
 	},
 	"find_in_files":
 	{
@@ -379,6 +347,46 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"renderCard",
+			"togglePopup",
+			"addPhoto",
+			"editInfo",
+			"photoElement",
+			"titleElement",
+			"photoLink",
+			"photoTitle",
+			"textInputActivity",
+			"imageCardDetails",
+			"popupEditForm",
+			"сontainerPopupEditForm",
+			"popupEditForm",
+			"formElement",
+			"сontainerPopupEditForm",
+			"popupEditForm",
+			"handleFormSubmit",
+			"togglePopupShowPhoto",
+			"togglePopupEditForm",
+			"сontainerPopupEditFormForm",
+			"togglepopupShowPhoto",
+			"togglepopupEditForm",
+			"сontainerpopupEditFormForm",
+			"buttonClosepopupEditForm",
+			"buttonClosepopupShowPhoto",
+			"popupShow",
+			"popupEdit",
+			"popupContainer",
+			"closeButtonPopupEdit",
+			"closeButtonPopupShow",
+			"addButton",
+			"editButton",
+			"let",
+			"createCard",
+			"makeCard",
+			"html",
+			"inner",
+			"togglePopup",
+			"popupWindow",
+			"formElement",
 			"butto",
 			"profileActivity",
 			"font-weight:"
@@ -389,6 +397,25 @@
 		"regex": false,
 		"replace_history":
 		[
+			"inputLinkFormAddNewCard",
+			"inputTitleFormAddNewCard",
+			"editProfileInfo",
+			"togglePopup",
+			"togglePopupShowPhoto",
+			"togglePopupEditForm",
+			"сontainerPopupEditFormForm",
+			"buttonClosePopupEditForm",
+			"buttonClosePopupShowPhoto",
+			"popupShowPhoto",
+			"popupEditForm",
+			"сontainerPopupEditForm",
+			"buttonClosePopupEdit",
+			"buttonClosePopupShow",
+			"buttonAddPhoto",
+			"buttonEditProfile",
+			"const",
+			"createCard",
+			"popupEdit"
 		],
 		"reverse": false,
 		"show_context": true,
@@ -399,89 +426,29 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "index.html",
+					"file": "/C/Users/Кирилл/dev/vk-source/index.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3271,
+						"buffer_size": 3731,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2157,
-								2157
+								0,
+								0
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 702.4,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "js/index.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3387,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1159,
-								1159
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1188.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "blocks/popup/_opened/popup_opened.css",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 106,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								106,
-								106
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/CSS/CSS.sublime-syntax"
+							"syntax": "Packages/HTML/HTML.sublime-syntax"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -489,43 +456,13 @@
 					},
 					"stack_index": 0,
 					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "blocks/popup/popup.css",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 526,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								526,
-								526
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/CSS/CSS.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
 				}
 			]
 		}
 	],
 	"incremental_find":
 	{
-		"height": 27.2
+		"height": 28.0
 	},
 	"input":
 	{
@@ -562,7 +499,7 @@
 	"project": "mesto.sublime-project",
 	"replace":
 	{
-		"height": 51.2
+		"height": 52.8
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -600,7 +537,7 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 195.0,
+	"side_bar_width": 240.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

@@ -44,13 +44,19 @@
 /* подгружаем стили блока Edit-form */
 @import url(../blocks/edit-form/edit-form.css);
 @import url(../blocks/edit-form/__title/edit-form__title.css);
+@import url(../blocks/edit-form/__set/edit-form__set.css);
+@import url(../blocks/edit-form/__field/edit-form__field.css);
 @import url(../blocks/edit-form/__input-text/edit-form__input-text.css);
 @import url(../blocks/edit-form/__input-text/_type/edit-form__input-text_type_activity.css);
 @import url(../blocks/edit-form/__input-text/_type/edit-form__input-text_type_link.css);
 @import url(../blocks/edit-form/__input-text/_type/edit-form__input-text_type_name.css);
 @import url(../blocks/edit-form/__input-text/_type/edit-form__input-text_type_title.css);
+@import url(../blocks/edit-form/__input-text/_type/edit-form__input-text_type_error.css);
+@import url(../blocks/edit-form/__input-error/edit-form__input-error.css);
+@import url(../blocks/edit-form/__input-error/_active/edit-form__input-error_active.css);
 @import url(../blocks/edit-form/__button/edit-form__button.css);
 @import url(../blocks/edit-form/__button/_type/edit-form__button_type_save.css);
+@import url(../blocks/edit-form/__button/_inactive/edit-form__button_inactive.css);
 
 /* подгружаем стили блока Card-details */
 @import url(../blocks/card-details/card-details.css);
