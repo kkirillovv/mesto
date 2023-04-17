@@ -36,6 +36,7 @@
 /* подгружаем стили блока Popup */
 @import url(../blocks/popup/popup.css);
 @import url(../blocks/popup/_opened/popup_opened.css);
+@import url(../blocks/popup/_overlay/popup_overlay_show-card.css);
 @import url(../blocks/popup/__container/popup__container.css);
 @import url(../blocks/popup/__container/_edit-form/popup__container_edit-form.css);
 @import url(../blocks/popup/__container/_card-details/popup__container_card-details.css);

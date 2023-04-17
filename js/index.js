@@ -1,6 +1,8 @@
 // A. Объявляем переменные -------------------------------------------------
 
 const validator = {
+  formSelector: '.edit-form',
+  setSelector: '.edit-form__set',
   inputSelector: '.edit-form__input-text',
   submitButtonSelector: '.edit-form__button',
   inactiveButtonClass: 'edit-form__button_inactive',
@@ -9,7 +11,7 @@ const validator = {
 }
 
 const cardTemplate = document.querySelector('#article_card').content;
-const elements = document.querySelector('.elements');
+const cardsContainer = document.querySelector('.elements');
 
 const content = document.querySelector('.content');
 const buttonEditProfile = content.querySelector('.profile-info__edit');
@@ -80,7 +82,7 @@ function editProfileInfo (evt) {
 // 3. Добавление карточки
 function makeNewCard (evt) {
   evt.preventDefault();
-  renderCard(elements, {
+  renderCard(cardsContainer, {
     name: inputTitleFormAddNewCard.value,
     link: inputLinkFormAddNewCard.value,
     alt: inputTitleFormAddNewCard.value
@@ -107,7 +109,7 @@ function handleOpenEditInfo () {
   ];
   creatFormPopup(popupEditFormProfile, inputTextFields);
   openPopup(popupEditFormProfile);
-  zeroInputsError(popupEditFormProfile, validator);
+  resetError(popupEditFormProfile, validator);
 }
 
 // 2. Форма добавления карточки
@@ -124,14 +126,14 @@ function handleOpenNewPhoto () {
   ];
   creatFormPopup(popupAddPhoto, inputTextFields);
   openPopup(popupAddPhoto);
-  zeroInputsError(popupAddPhoto, validator);
+  resetError(popupAddPhoto, validator);
 }
 
 // C. Реализуем добавление обработчиков ------------------------------------
 
 // 1. Шесть карточек «из коробки»
 initialCards.forEach(function (item) {
-  renderCard(elements, item)
+  renderCard(cardsContainer, item)
 });
 
 // Сниферы 
@@ -141,12 +143,5 @@ buttonAddPhoto.addEventListener('click', handleOpenNewPhoto);
 popupEditFormProfile.addEventListener('submit', editProfileInfo);
 popupAddPhoto.addEventListener('submit', makeNewCard);
 
-enableValidation({
-  formSelector: '.edit-form', // .popup__form
-  setSelector: '.edit-form__set', // .popup__set
-  inputSelector: '.edit-form__input-text', // .popup__input
-  submitButtonSelector: '.edit-form__button', // .popup__button
-  inactiveButtonClass: 'edit-form__button_inactive', // popup__button_disabled
-  inputErrorClass: 'edit-form__input-text_type_error', // popup__input_type_error
-  errorClass: 'edit-form__input-error_active' // popup__error_visible
-});
+// Запускаем валидацию
+enableValidation(validator);

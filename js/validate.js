@@ -12,7 +12,7 @@ function hideInputError(formElement, inputElement, validator) {
   errorElement.classList.remove(validator.errorClass);
 }
 
-function zeroInputsError(formElement, validator) {
+function resetError(formElement, validator) {
   const inputList = Array.from(formElement.querySelectorAll(validator.inputSelector));
   const buttonElement = formElement.querySelector(validator.submitButtonSelector);
   inputList.forEach((inputElement) => {
