@@ -1,3 +1,6 @@
+import {Card} from './Card.js';
+import {FormValidator} from './FormValidator.js';
+
 // A. Объявляем переменные -------------------------------------------------
 
 const validator = {
@@ -9,9 +12,6 @@ const validator = {
   inputErrorClass: 'edit-form__input-text_type_error',
   errorClass: 'edit-form__input-error_active'
 }
-
-const cardTemplate = document.querySelector('#article_card').content;
-const cardsContainer = document.querySelector('.elements');
 
 const content = document.querySelector('.content');
 const buttonEditProfile = content.querySelector('.profile-info__edit');
@@ -26,51 +26,8 @@ const inputActivityFormProfile = popupEditFormProfile.querySelector('.edit-form_
 const popupAddPhoto = document.querySelector('#add-photo');
 const inputTitleFormAddNewCard = popupAddPhoto.querySelector('.edit-form__input-text_type_title');
 const inputLinkFormAddNewCard = popupAddPhoto.querySelector('.edit-form__input-text_type_link');
-// Попап показа фотографий
-const popupShowPhoto = document.querySelector('#show');
-const titleCardDetails = popupShowPhoto.querySelector('.card-details__title');
-const imageCardDetails = popupShowPhoto.querySelector('.card-details__image')
 
 // B. Объявляем функции ----------------------------------------------------
-
-function handleOpenFullImage (item) {
-  titleCardDetails.textContent = item.name;
-  imageCardDetails.src = item.link;
-  imageCardDetails.alt = item.alt;
-  openPopup(popupShowPhoto);
-} 
-
-function createCard (item) {
-  // клонируем содержимое тега template
-  const element = cardTemplate.querySelector('.element').cloneNode(true);
-  const likeElement = element.querySelector('.element__like');
-  const trashElement = element.querySelector('.element__trash');
-  const photoElement = element.querySelector('.element__photo');
-  const titleElement = element.querySelector('.element__title');
-
-  // заполняем карточку
-  titleElement.textContent = item.name;
-  photoElement.src = item.link;
-  photoElement.alt = item.alt;
-
-  // 4. Лайк карточки надо сделать через toggle / Слушатель события
-  likeElement.addEventListener('click', function () {
-    likeElement.classList.toggle("element__like_active");
-  });
-  // 5. Удаление карточки / Слушатель события
-  trashElement.addEventListener('click', function () {
-    trashElement.parentElement.remove();
-  });
-  // 6. Открытие попапа с картинкой / Слушатель события
-  photoElement.addEventListener('click', () => handleOpenFullImage(item));
-
-  return element;
-}
-
-function renderCard (container, item) { 
-  // отображаем на странице
-  container.prepend(createCard(item));
-}
 
 function editProfileInfo (evt) {
   evt.preventDefault(); // Эта строчка отменяет стандартную отправку формы.
@@ -82,11 +39,12 @@ function editProfileInfo (evt) {
 // 3. Добавление карточки
 function makeNewCard (evt) {
   evt.preventDefault();
-  renderCard(cardsContainer, {
+  const card = new Card({
     name: inputTitleFormAddNewCard.value,
     link: inputLinkFormAddNewCard.value,
     alt: inputTitleFormAddNewCard.value
-  }); 
+  }, '#article_card');
+  card.renderCard();
   closePopup(popupAddPhoto);
 }
 
@@ -109,7 +67,8 @@ function handleOpenEditInfo () {
   ];
   creatFormPopup(popupEditFormProfile, inputTextFields);
   openPopup(popupEditFormProfile);
-  resetError(popupEditFormProfile, validator);
+  const formValidator = new FormValidator(validator, popupEditFormProfile);
+  formValidator.resetError();
 }
 
 // 2. Форма добавления карточки
@@ -126,14 +85,16 @@ function handleOpenNewPhoto () {
   ];
   creatFormPopup(popupAddPhoto, inputTextFields);
   openPopup(popupAddPhoto);
-  resetError(popupAddPhoto, validator);
+  const formValidator = new FormValidator(validator, popupAddPhoto);
+  formValidator.resetError();
 }
 
 // C. Реализуем добавление обработчиков ------------------------------------
 
 // 1. Шесть карточек «из коробки»
-initialCards.forEach(function (item) {
-  renderCard(cardsContainer, item)
+initialCards.forEach((item) => {
+  const card = new Card(item, '#article_card');
+  card.renderCard();
 });
 
 // Сниферы 
@@ -144,4 +105,8 @@ popupEditFormProfile.addEventListener('submit', editProfileInfo);
 popupAddPhoto.addEventListener('submit', makeNewCard);
 
 // Запускаем валидацию
-enableValidation(validator);
+const formList = Array.from(document.querySelectorAll(validator.formSelector));
+formList.forEach((formElement) => {
+  const formValidator = new FormValidator(validator, formElement);
+  formValidator.enableValidation();
+});
