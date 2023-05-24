@@ -67,9 +67,4 @@ export class Card {
 
     return this._element;
   }
-
-  renderCard () { 
-    // отображаем на странице
-    document.querySelector(this._articleClass).prepend(this.createCard());
-  }
 }

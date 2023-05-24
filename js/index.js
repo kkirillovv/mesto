@@ -44,7 +44,7 @@ function makeNewCard (evt) {
     link: inputLinkFormAddNewCard.value,
     alt: inputTitleFormAddNewCard.value
   }, '#article_card');
-  card.renderCard();
+  document.querySelector('.elements').prepend(card.createCard());
   closePopup(popupAddPhoto);
 }
 
@@ -67,8 +67,7 @@ function handleOpenEditInfo () {
   ];
   creatFormPopup(popupEditFormProfile, inputTextFields);
   openPopup(popupEditFormProfile);
-  const formValidator = new FormValidator(validator, popupEditFormProfile);
-  formValidator.resetError();
+  formEditProfile.resetError();
 }
 
 // 2. Форма добавления карточки
@@ -85,8 +84,7 @@ function handleOpenNewPhoto () {
   ];
   creatFormPopup(popupAddPhoto, inputTextFields);
   openPopup(popupAddPhoto);
-  const formValidator = new FormValidator(validator, popupAddPhoto);
-  formValidator.resetError();
+  formAddPhoto.resetError();
 }
 
 // C. Реализуем добавление обработчиков ------------------------------------
@@ -94,7 +92,7 @@ function handleOpenNewPhoto () {
 // 1. Шесть карточек «из коробки»
 initialCards.forEach((item) => {
   const card = new Card(item, '#article_card');
-  card.renderCard();
+  document.querySelector('.elements').prepend(card.createCard());
 });
 
 // Сниферы 
@@ -106,7 +104,7 @@ popupAddPhoto.addEventListener('submit', makeNewCard);
 
 // Запускаем валидацию
 const formList = Array.from(document.querySelectorAll(validator.formSelector));
-formList.forEach((formElement) => {
-  const formValidator = new FormValidator(validator, formElement);
-  formValidator.enableValidation();
-});
+const formEditProfile = new FormValidator(validator, formList[0]);
+formEditProfile.enableValidation();
+const formAddPhoto = new FormValidator(validator, formList[1]);
+formAddPhoto.enableValidation();
