@@ -1,10 +1,11 @@
 export class Card {
 
-  constructor (data, templateSelector) {
+  constructor (data, handleOpenFullImage, templateSelector) {
     this._data = data;
-    this._name = data.name;
+    this._title = data.title;
     this._link = data.link;
     this._alt = data.alt;
+    this._handleOpenFullImage = handleOpenFullImage;
     this._templateSelector = templateSelector;
     this._articleClass = '.elements'; // Класс карточек
   }
@@ -35,17 +36,6 @@ export class Card {
     });
   }
 
-  _handleOpenFullImage (item) {
-    // Попап показа фотографий
-    const popupShowPhoto = document.querySelector('#show');
-    const titleCardDetails = popupShowPhoto.querySelector('.card-details__title');
-    const imageCardDetails = popupShowPhoto.querySelector('.card-details__image')
-    titleCardDetails.textContent = item.name;
-    imageCardDetails.src = item.link;
-    imageCardDetails.alt = item.alt;
-    openPopup(popupShowPhoto);
-  }
-
   // 6. Открытие попапа с картинкой / Слушатель события
   _listenOpenFullImage (element) {
     element.addEventListener('click', () => this._handleOpenFullImage(this._data));
@@ -58,7 +48,7 @@ export class Card {
     const titleElement = this._element.querySelector('.element__title');
   
     // заполняем карточку
-    titleElement.textContent = this._name;
+    titleElement.textContent = this._title;
     photoElement.src = this._link;
     photoElement.alt = this._alt;
     this._listenLike();
