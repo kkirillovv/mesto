@@ -5,41 +5,44 @@ export class Popup {
       activePopup: 'popup_opened',
       buttonCloseSelector: '.popup__close'
     }
-    this._popup = document.querySelector(selector);
-    this._buttonClose = this._popup.querySelector(this._popupStyle.buttonCloseSelector);
+    this._popup = document.querySelector(selector)
+    this._buttonClose = this._popup.querySelector(this._popupStyle.buttonCloseSelector)
+    this.close = this.close.bind(this)
+    this._handleEscClose = this._handleEscClose.bind(this)
+    this._clickHandlerOverlayOut = this._clickHandlerOverlayOut.bind(this)
   }
 
   open() {
-    this._popup.classList.add(this._popupStyle.activePopup);
-    this.setEventListeners();
+    this._popup.classList.add(this._popupStyle.activePopup)
+    this._setEventListeners()
   }
 
   close() {
-    this._popup.classList.remove(this._popupStyle.activePopup);
-    // this._removeEventListeners();
+    this._popup.classList.remove(this._popupStyle.activePopup)
+    this._removeEventListeners()
   }
 
   _handleEscClose(evt) {
     if (evt.key === 'Escape') {
-      this.close();
+      this.close()
     }
   }
 
   _clickHandlerOverlayOut(evt) {
     if (evt.target.classList.contains(this._popupStyle.popup)) {
-      this.close();
+      this.close()
     }
   }
 
-  setEventListeners() {
-    this._buttonClose.addEventListener('click', () => this.close()); // закрытие popup кликом на кнопке 
-    document.addEventListener('keydown', (evt) => this._handleEscClose(evt)); //закрытие popup по нажатию специальной клавиши
-    this._popup.addEventListener('click', (evt) => this._clickHandlerOverlayOut(evt)); // закрытие popup кликом на оверлей
+  _setEventListeners() {
+    this._buttonClose.addEventListener('click', this.close) // закрытие popup кликом на кнопке 
+    document.addEventListener('keydown', this._handleEscClose) //закрытие popup по нажатию специальной клавиши
+    this._popup.addEventListener('click', this._clickHandlerOverlayOut) // закрытие popup кликом на оверлей
   }
 
-  // _removeEventListeners() {
-  //   this._buttonClose.removeEventListener('click', this.close);
-  //   document.removeEventListener('keydown', this._handleEscClose);
-  //   this._popup.removeEventListener('click', this._clickHandlerOverlayOut);
-  // }
+  _removeEventListeners() {
+    this._buttonClose.removeEventListener('click', this.close)
+    document.removeEventListener('keydown', this._handleEscClose)
+    this._popup.removeEventListener('click', this._clickHandlerOverlayOut)
+  }
 }
