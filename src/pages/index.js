@@ -55,11 +55,11 @@ buttonEditProfile.addEventListener('click', () => {
   const inputTextFields = [
     {
       selector: '.edit-form__input-text_type_name',
-      value: userInfo.userName.textContent
+      value: userInfo.getUserInfo().name
     },
     {
       selector: '.edit-form__input-text_type_activity',
-      value: userInfo.userActivity.textContent
+      value: userInfo.getUserInfo().activity
     }
   ]
   const popupEditUser = new PopupWithForm('#edit-profile', editProfileInfo);
