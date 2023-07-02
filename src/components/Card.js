@@ -4,10 +4,12 @@ export class Card {
     this._data = data;
     this._title = data.title;
     this._link = data.link;
-    this._alt = data.alt;
+    this._alt = data.alt || data.title;
     this._handleOpenFullImage = handleOpenFullImage;
     this._templateSelector = templateSelector;
     this._articleClass = '.elements'; // Класс карточек
+    this.like = this.like.bind(this)
+    this.trash = this.trash.bind(this)
   }
 
   _getTemplate () {
@@ -20,20 +22,26 @@ export class Card {
     return cardElement;
   }
 
-  // 4. Лайк карточки надо сделать через toggle / Слушатель события    
+  // 4. Лайк карточки надо сделать через toggle / Слушатель события
+  like() {
+    this.likeElement.classList.toggle("element__like_active")
+  }
+
   _listenLike () {
-    const likeElement = this._element.querySelector('.element__like');
-    likeElement.addEventListener('click', function () {
-      likeElement.classList.toggle("element__like_active");
-    });
+    this.likeElement.addEventListener('click', this.like)
   }
 
   // 5. Удаление карточки / Слушатель события
+  trash() {
+    this.trashElement.parentElement.remove()
+    this.trashElement.removeEventListener('click', this.trash)
+    this.likeElement.removeEventListener('click', this.like)
+    this.trashElement = null
+    this.likeElement = null
+  }
+
   _listenTrash () {
-    const trashElement = this._element.querySelector('.element__trash');
-    trashElement.addEventListener('click', function () {
-      trashElement.parentElement.remove();
-    });
+    this.trashElement.addEventListener('click', this.trash)
   }
 
   // 6. Открытие попапа с картинкой / Слушатель события
@@ -43,18 +51,20 @@ export class Card {
 
   createCard () {
     // клонируем содержимое тега template
-    this._element = this._getTemplate();
-    const photoElement = this._element.querySelector('.element__photo');
-    const titleElement = this._element.querySelector('.element__title');
-  
-    // заполняем карточку
-    titleElement.textContent = this._title;
-    photoElement.src = this._link;
-    photoElement.alt = this._alt;
-    this._listenLike();
-    this._listenTrash();
-    this._listenOpenFullImage(photoElement);
+    this._element = this._getTemplate()
+    const photoElement = this._element.querySelector('.element__photo')
+    const titleElement = this._element.querySelector('.element__title')
+    this.likeElement = this._element.querySelector('.element__like')
+    this.trashElement = this._element.querySelector('.element__trash')
 
-    return this._element;
+    // заполняем карточку
+    titleElement.textContent = this._title
+    photoElement.src = this._link
+    photoElement.alt = this._alt
+    this._listenLike()
+    this._listenTrash()
+    this._listenOpenFullImage(photoElement)
+
+    return this._element
   }
 }

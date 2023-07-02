@@ -37,7 +37,7 @@ export class Popup {
   _setEventListeners() {
     this._buttonClose.addEventListener('click', this.close) // закрытие popup кликом на кнопке 
     document.addEventListener('keydown', this._handleEscClose) //закрытие popup по нажатию специальной клавиши
-    this._popup.addEventListener('click', this._clickHandlerOverlayOut) // закрытие popup кликом на оверлей
+    this._popup.addEventListener('mousedown', this._clickHandlerOverlayOut) // закрытие popup кликом на оверлей
   }
 
   _removeEventListeners() {

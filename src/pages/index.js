@@ -6,6 +6,8 @@ import {
   buttonAddPhoto, 
   profileName,
   profileActivity,
+  formEditProfilePopup,
+  formAddPhotoPopup
 } from '../utils/constants.js'
 
 import {Card} from '../components/Card.js'
@@ -18,23 +20,22 @@ import {UserInfo} from '../components/UserInfo.js'
 // B. Объявляем функции ----------------------------------------------------
 
 // 1. Попап показа фотографий
+const popup = new PopupWithImage('#show')
 function handleOpenFullImage (item) {
-  const popup = new PopupWithImage('#show')
   popup.open(item)
 }
 
 // 2. Сабмит формы редактирования пользователя
-function editProfileInfo (evt) {
+function editProfileInfo (evt, formValues) {
   evt.preventDefault()
-  userInfo.setUserInfo(this._formValues)
+  userInfo.setUserInfo(formValues)
 }
 
 // 3. Сабмит формы добавления карточки
-function makeNewCard (evt) {
+function makeNewCard (evt, formValues) {
   evt.preventDefault()
-  this._formValues.alt = this._formValues.title
-  const card = new Card(this._formValues, handleOpenFullImage, '#article_card')
-  document.querySelector('.elements').prepend(card.createCard())
+  const card = new Card(formValues, handleOpenFullImage, '#article_card')
+  cardList.addItem(card.createCard())
 }
 
 
@@ -43,7 +44,7 @@ function makeNewCard (evt) {
 // 1. Шесть карточек «из коробки»
 const cardList = new Section({items: initialCards, renderer: (item) => {
     const card = new Card(item, handleOpenFullImage, '#article_card')
-    document.querySelector('.elements').prepend(card.createCard())
+    cardList.addItem(card.createCard())
   }
 }, '.elements')
 cardList.renderItems()
@@ -51,6 +52,7 @@ cardList.renderItems()
 const userInfo = new UserInfo(profileName, profileActivity)
 
 // 2. Сниферы
+const popupEditUser = new PopupWithForm('#edit-profile', editProfileInfo)
 buttonEditProfile.addEventListener('click', () => {
   const inputTextFields = [
     {
@@ -62,11 +64,11 @@ buttonEditProfile.addEventListener('click', () => {
       value: userInfo.getUserInfo().activity
     }
   ]
-  const popupEditUser = new PopupWithForm('#edit-profile', editProfileInfo);
   popupEditUser.open(inputTextFields)
   formEditProfile.resetError()
 })
 
+const popupAddPhoto = new PopupWithForm('#add-photo', makeNewCard)
 buttonAddPhoto.addEventListener('click', () => {
   const inputTextFields = [
     {
@@ -78,14 +80,11 @@ buttonAddPhoto.addEventListener('click', () => {
       value: ''
     }
   ]
-  const popupAddPhoto = new PopupWithForm('#add-photo', makeNewCard)
   popupAddPhoto.open(inputTextFields)
   formAddPhoto.resetError()
 })
 
-// 3. Запускаем валидацию
-const formList = Array.from(document.querySelectorAll(validator.formSelector))
-const formEditProfile = new FormValidator(validator, formList[0])
+const formEditProfile = new FormValidator(validator, formEditProfilePopup)
 formEditProfile.enableValidation()
-const formAddPhoto = new FormValidator(validator, formList[1])
+const formAddPhoto = new FormValidator(validator, formAddPhotoPopup)
 formAddPhoto.enableValidation()
