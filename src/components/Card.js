@@ -33,7 +33,7 @@ export class Card {
 
   // 5. Удаление карточки / Слушатель события
   trash() {
-    this.trashElement.parentElement.remove()
+    this._element.remove()
     this.trashElement.removeEventListener('click', this.trash)
     this.likeElement.removeEventListener('click', this.like)
     this.trashElement = null

@@ -20,9 +20,9 @@ import {UserInfo} from '../components/UserInfo.js'
 // B. Объявляем функции ----------------------------------------------------
 
 // 1. Попап показа фотографий
-const popup = new PopupWithImage('#show')
+const popupShowImage = new PopupWithImage('#show')
 function handleOpenFullImage (item) {
-  popup.open(item)
+  popupShowImage.open(item)
 }
 
 // 2. Сабмит формы редактирования пользователя
@@ -84,6 +84,7 @@ buttonAddPhoto.addEventListener('click', () => {
   formAddPhoto.resetError()
 })
 
+// 3. Валидация форм
 const formEditProfile = new FormValidator(validator, formEditProfilePopup)
 formEditProfile.enableValidation()
 const formAddPhoto = new FormValidator(validator, formAddPhotoPopup)

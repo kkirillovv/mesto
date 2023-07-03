@@ -24,8 +24,8 @@ export class PopupWithForm extends Popup {
 
   _doSubmit (evt) {
     evt.preventDefault()
-    this._formValues = this._getInputValues()
-    this._submitForm(evt, this._formValues)
+    const formValues = this._getInputValues()
+    this._submitForm(evt, formValues)
     this.close()
   }
 
