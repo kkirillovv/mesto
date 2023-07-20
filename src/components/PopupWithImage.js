@@ -8,9 +8,9 @@ export class PopupWithImage extends Popup {
   }
 
   open(item) {
-    this._titleCardDetails.textContent = item.title
+    this._titleCardDetails.textContent = item.name
     this._imageCardDetails.src = item.link
-    this._imageCardDetails.alt = item.alt || item.title
+    this._imageCardDetails.alt = item.alt || item.name
     super.open()
   }
 }

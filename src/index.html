@@ -2,6 +2,7 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
+  <link rel="stylesheet" href="pages/index.css">
   <title>Mesto (Russia)</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Cервис Mesto: интерактивная страница, куда можно добавлять фотографии, удалять их и ставить лайки.">
@@ -16,7 +17,7 @@
 
     <main class="content">
       <section class="profile">
-        <img src="<%=require('./images/profile.jpg')%>" class="profile__avatar" alt="Вулканы Курил">
+        <button class="profile__avatar" type="button"></button>
         <div class="profile-info">
           <h1 class="profile-info__name">Вулканы Курил</h1>
           <button class="profile-info__edit" type="button" aria-label="Редактировать"></button>
@@ -41,12 +42,28 @@
         <h2 class="edit-form__title">Редактировать профиль</h2>
         <fieldset class="edit-form__set">
           <label class="edit-form__field">
-            <input type="text" name="pname" class="edit-form__input-text edit-form__input-text_type_name" placeholder="Имя" value="" required minlength="2" maxlength="40" id="name-input">
+            <input type="text" name="name" class="edit-form__input-text edit-form__input-text_type_name" placeholder="Имя" value="" required minlength="2" maxlength="40" id="name-input">
             <span class="edit-form__input-error name-input-error"></span>
           </label>
           <label class="edit-form__field">
-            <input type="text" name="activity" class="edit-form__input-text edit-form__input-text_type_activity" placeholder="Деятельность" value="" required minlength="2" maxlength="200" id="activity-input">
+            <input type="text" name="about" class="edit-form__input-text edit-form__input-text_type_activity" placeholder="Деятельность" value="" required minlength="2" maxlength="200" id="activity-input">
             <span class="edit-form__input-error activity-input-error"></span>
+          </label>
+          <button class="edit-form__button edit-form__button_type_save" type="submit" aria-label="Сохранить">Сохранить</button>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+
+  <div class="popup" id="edit-avatar">
+    <div class="popup__container popup__container_edit-form">
+      <button class="popup__close" type="button" aria-label="Закрыть"></button>
+      <form class="edit-form" name="edit-avatar" novalidate>
+        <h2 class="edit-form__title">Обновить аватар</h2>
+        <fieldset class="edit-form__set">
+          <label class="edit-form__field">
+            <input type="url" name="avatar" class="edit-form__input-text edit-form__input-text_type_link" placeholder="Cсылка на аватарку" value="" required id="link-input">
+            <span class="edit-form__input-error link-input-error"></span>
           </label>
           <button class="edit-form__button edit-form__button_type_save" type="submit" aria-label="Сохранить">Сохранить</button>
         </fieldset>
@@ -61,7 +78,7 @@
         <h2 class="edit-form__title">Новое место</h2>
         <fieldset class="edit-form__set">
           <label class="edit-form__field">
-            <input type="text" name="title" class="edit-form__input-text edit-form__input-text_type_title" placeholder="Название" value="" required minlength="2" maxlength="30" id="title-input">
+            <input type="text" name="name" class="edit-form__input-text edit-form__input-text_type_title" placeholder="Название" value="" required minlength="2" maxlength="30" id="title-input">
             <span class="edit-form__input-error title-input-error"></span>
           </label>
           <label class="edit-form__field">
@@ -69,6 +86,18 @@
             <span class="edit-form__input-error link-input-error"></span>
           </label>
           <button class="edit-form__button edit-form__button_type_save" type="submit" aria-label="Сохранить">Сохранить</button>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+
+  <div class="popup" id="delete-photo">
+    <div class="popup__container popup__container_edit-form">
+      <button class="popup__close" type="button" aria-label="Закрыть"></button>
+      <form class="edit-form" name="delete-photo" novalidate>
+        <h2 class="edit-form__title">Вы уверены?</h2>
+        <fieldset class="edit-form__set">
+          <button class="edit-form__button edit-form__button_type_save" type="submit" aria-label="Да">Да</button>
         </fieldset>
       </form>
     </div>
@@ -90,9 +119,14 @@
       <button class="element__trash" type="button"></button>
       <div class="element__block">
         <h3 class="element__title"></h3>
-        <button class="element__like" type="button"></button>
+        <div>
+          <button class="element__like" type="button"></button>
+          <p class="element__like-counter">0</p>
+        </div>
       </div>
     </article>
   </template>
+
+  <script type="module" src="pages/index.js"></script>
 </body>
 </html>
