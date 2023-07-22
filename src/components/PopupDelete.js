@@ -12,7 +12,6 @@ export class PopupDelete extends Popup {
     evt.preventDefault()
     this.submitButton.textContent = 'Удаление...';
     this._confirmDeletion(evt, this.item_delete)
-    this.close()
   }
 
   _setEventListeners() {

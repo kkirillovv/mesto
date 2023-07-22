@@ -1,5 +1,4 @@
 import {Popup} from "./Popup.js"
-import {fillFieldsForm} from "../utils/utils.js"
 
 export class PopupWithForm extends Popup {
   constructor(selector, submitForm) {
@@ -11,7 +10,9 @@ export class PopupWithForm extends Popup {
   }
 
   open(fields) {
-    fillFieldsForm(this._popup, fields)
+    fields.forEach(item => {
+      this._popup.querySelector(item.selector).value = item.value;
+    })
     super.open()
   }
 
@@ -29,7 +30,6 @@ export class PopupWithForm extends Popup {
     const formValues = this._getInputValues()
     this._submitForm(evt, formValues)
     console.log(formValues)
-    this.close()
   }
 
   _setEventListeners() {

@@ -37,6 +37,7 @@ function editProfileInfo (evt, formValues) {
   api.editUserInfo(formValues)
     .then((res) => {
       userInfo.setUserInfo(res)
+      popupEditUser.close()
     })
     .catch((err) => {
       console.error(`Что-то пошло не так: ${err}`)
@@ -51,6 +52,7 @@ function editAvatar (evt, formValues) {
   api.editUserAvatar(formValues)
   .then((res) => {
     userInfo.setAvatar(res)
+    popupEditAvatar.close()
   })
   .catch((err) => {
     console.error(`Что-то пошло не так: ${err}`)
@@ -66,9 +68,9 @@ function makeNewCard (evt, formValues) {
   api.addNewCard(formValues)
   .then((res) => {
     res.userId = res.owner._id
-    const card = new Card(res, '#article_card', handleOpenFullImage, 
-    handleDeleteCardPopup, handleButtonLike)
-    cardList.addItem(card.createCard())
+    const card = instantiationCard(res);
+    cardList.addItem(card);
+    popupAddPhoto.close()
   })
   .catch((err) => {
     console.error(`Что-то пошло не так: ${err}`)
@@ -89,6 +91,7 @@ function confirmDeletion(evt, item_delete) {
   api.deleteCard(item_delete._id)
     .then((res) => {
       item_delete.trash()
+      popupDeleteCard.close()
     })
     .catch((err) => {
       console.error(`Что-то пошло не так: ${err}`)
@@ -119,6 +122,14 @@ function handleButtonLike(item) {
   }
 }
 
+// 6. Истанцирование класса Card
+function instantiationCard (item) {
+  const card = new Card(item, '#article_card', handleOpenFullImage,
+    handleDeleteCardPopup, handleButtonLike)
+  const element = card.createCard()
+  return element
+}
+
 // C. Объявляем Api --------------------------------------------------------
 
 const api = new Api({
@@ -146,11 +157,11 @@ api.getPageData()
 
 // 1. Задаем контейнер начальных данных
 const cardList = new Section({ renderer: (item) => {
-  const card = new Card(item, '#article_card', handleOpenFullImage,
-    handleDeleteCardPopup, handleButtonLike)
-    cardList.addItem(card.createCard())
+    const card = instantiationCard(item);
+    cardList.addItem(card);
   }
 }, '.elements')
+
 const popupDeleteCard = new PopupDelete('#delete-photo', confirmDeletion)
 const userInfo = new UserInfo(profileAvatar, profileName, profileActivity)
 
