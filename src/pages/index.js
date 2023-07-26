@@ -43,7 +43,7 @@ function editProfileInfo (evt, formValues) {
       console.error(`Что-то пошло не так: ${err}`)
     })
     .finally(() => {
-      popupEditUser.submitButton.textContent = 'Сохранить'
+      popupEditUser.renderLoading(false)
     })
 }
 
@@ -58,7 +58,7 @@ function editAvatar (evt, formValues) {
     console.error(`Что-то пошло не так: ${err}`)
   })
   .finally(() => {
-    popupEditAvatar.submitButton.textContent = 'Сохранить'
+    popupEditAvatar.renderLoading(false)
   })
 }
 
@@ -68,7 +68,7 @@ function makeNewCard (evt, formValues) {
   api.addNewCard(formValues)
   .then((res) => {
     res.userId = res.owner._id
-    const card = instantiationCard(res);
+    const card = instantiateCard(res);
     cardList.addItem(card);
     popupAddPhoto.close()
   })
@@ -76,37 +76,38 @@ function makeNewCard (evt, formValues) {
     console.error(`Что-то пошло не так: ${err}`)
   })
   .finally(() => {
-    popupAddPhoto.submitButton.textContent = 'Сохранить'
+    popupAddPhoto.renderLoading(false)
   })
 }
 
 // 4. Запрос на удаление карточки и открытия попапа удаления
 function handleDeleteCardPopup (item) {
   popupDeleteCard.open()
-  popupDeleteCard.item_delete = item
+  popupDeleteCard.itemDelete = item
 }
 
-function confirmDeletion(evt, item_delete) {
+function confirmDeletion(evt, itemDelete) {
   evt.preventDefault()
-  api.deleteCard(item_delete._id)
+  api.deleteCard(itemDelete._id)
     .then((res) => {
-      item_delete.trash()
+      itemDelete.trash()
       popupDeleteCard.close()
     })
     .catch((err) => {
       console.error(`Что-то пошло не так: ${err}`)
     })
     .finally(() => {
-      popupDeleteCard.submitButton.textContent = 'Да'
+      popupDeleteCard.renderLoading(false)
     })
 }
 
 // 5. Обработка кнопки like
 function handleButtonLike(item) {
-  if (!item.likeElement.classList.contains('element__like_active')) {
+  if (item.isLiked()) {
     api.deleteLike(item._id)
       .then((res) => {
         item.likeCounter.textContent = res.likes.length
+        item.likeElement.classList.toggle(item.selectorLikeActive)
       })
       .catch((err) => {
         console.error(`Что-то пошло не так: ${err}`)
@@ -115,6 +116,7 @@ function handleButtonLike(item) {
     api.putLike(item._id)
       .then((res) => {
         item.likeCounter.textContent = res.likes.length
+        item.likeElement.classList.toggle(item.selectorLikeActive)
       })
       .catch((err) => {
         console.error(`Что-то пошло не так: ${err}`)
@@ -123,7 +125,7 @@ function handleButtonLike(item) {
 }
 
 // 6. Истанцирование класса Card
-function instantiationCard (item) {
+function instantiateCard (item) {
   const card = new Card(item, '#article_card', handleOpenFullImage,
     handleDeleteCardPopup, handleButtonLike)
   const element = card.createCard()
@@ -157,7 +159,7 @@ api.getPageData()
 
 // 1. Задаем контейнер начальных данных
 const cardList = new Section({ renderer: (item) => {
-    const card = instantiationCard(item);
+    const card = instantiateCard(item);
     cardList.addItem(card);
   }
 }, '.elements')
@@ -168,14 +170,15 @@ const userInfo = new UserInfo(profileAvatar, profileName, profileActivity)
 // 2. Сниферы
 const popupEditUser = new PopupWithForm('#edit-profile', editProfileInfo)
 buttonEditProfile.addEventListener('click', () => {
+  const {activity, name} = userInfo.getUserInfo()
   const inputTextFields = [
     {
       selector: '.edit-form__input-text_type_name',
-      value: userInfo.getUserInfo().name
+      value: name
     },
     {
       selector: '.edit-form__input-text_type_activity',
-      value: userInfo.getUserInfo().activity
+      value: activity
     }
   ]
   popupEditUser.open(inputTextFields)

@@ -43,6 +43,6 @@ export class Popup {
   _removeEventListeners() {
     this._buttonClose.removeEventListener('click', this.close)
     document.removeEventListener('keydown', this._handleEscClose)
-    this._popup.removeEventListener('click', this._clickHandlerOverlayOut)
+    this._popup.removeEventListener('mousedown', this._clickHandlerOverlayOut)
   }
 }

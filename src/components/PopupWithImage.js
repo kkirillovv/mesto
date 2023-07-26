@@ -8,6 +8,7 @@ export class PopupWithImage extends Popup {
   }
 
   open(item) {
+    console.log(item)
     this._titleCardDetails.textContent = item.name
     this._imageCardDetails.src = item.link
     this._imageCardDetails.alt = item.alt || item.name
